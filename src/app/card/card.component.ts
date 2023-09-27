@@ -7,9 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  produtos:string[] = []
+  menuType:string = "admin"
+
+  constructor() {
+    this.produtos = [
+      "mouse",
+      "teclado",
+      "cabo",
+      "font"
+    ]
+  }
 
   ngOnInit(): void {
+  }
+
+  adicionar() {
+    this.produtos.push("Aldo") //Adiciona um item
+    
+  }
+
+  remover() {
+    this.produtos.pop() //remove um item
+  }
+
+  removerIndex(index:number) {
+    //alert(index)
+    this.produtos.splice(index, 1)
   }
 
 }
